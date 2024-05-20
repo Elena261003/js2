@@ -18,42 +18,29 @@ function wordToUper(word) {
 
 wordToUper('Hellooooo');
 
-function makeConjugation(verbo1, verbo2) {
-  if (verbo1.endsWith('ar') && verbo2.endsWith('ar')) {
-    console.log(
-      `Los verbos ${verbo1} y ${verbo2} son de la primera conjugación`
-    );
-  } else if (verbo1.endsWith('er') && verbo2.endsWith('er')) {
-    console.log(
-      `Los verbos ${verbo1} y ${verbo2} son de la segunda conjugación`
-    );
-  } else if (verbo1.endsWith('ir') && verbo2.endsWith('ir')) {
-    console.log(
-      `Los verbos ${verbo1} y ${verbo2} son de la tercera conjugación`
-    );
-  } else if (verbo1.endsWith('ar') && verbo2.endsWith('er')) {
-    console.log(
-      `Los verbos ${verbo1} y ${verbo2} son de la primera conjugación`
-    );
-  } else if (verbo1.endsWith('er') && verbo2.endsWith('ir')) {
-    console.log(
-      `Los verbos ${verbo1} y ${verbo2} son de la segunda conjugación`
-    );
-  } else if (verbo1.endsWith('ir') && verbo2.endsWith('ar')) {
-    console.log(
-      `Los verbos ${verbo1} y ${verbo2} son de la tercera conjugación`
-    );
-  } else if (verbo1.endsWith('ar') && verbo2.endsWith('ir')) {
-    console.log(
-      `Los verbos ${verbo1} y ${verbo2} son de la primera conjugación`
-    );
-  } else if (verbo1.endsWith('er') && verbo2.endsWith('ar')) {
-    console.log(
-      `Los verbos ${verbo1} y ${verbo2} son de la segunda conjugación`
-    );
-  } else verbo1.endsWith('ir') && verbo2.endsWith('er');
-  console.log(`Los verbos ${verbo1} y ${verbo2} son de la tercera conjugación`);
-}
+function getConjugation(verb) {
+  if (verb.endsWith('ar')) {
+    return `es de la primera conjugación`;
+  }
+  if (verb.endsWith('er')) {
+    return `es de la segunda conjugación`;
+  }
+  if (verb.endsWith('ir')) {
+    return `es de la tercera conjugación`;
+  }
 
-makeConjugation('llorar', 'comer');
-makeConjugation('llamar', 'morir');
+  function verbConjugation(verb1, verb2) {
+    const firstVerb = getConjugationC(verb1);
+    const secondVerb = getConjugation(verb2);
+
+    console.log(
+      `El verbo ${verb1} ${firstVerb} y el verbo ${verb2} ${secondVerb}`
+    );
+  }
+}
+getConjugation('andar', 'llover');
+// Crea una función que reciba un email e imprima por separado el nombre y el dominio. Por ejemplo, si recibe "dorian@gmail.com" deberá imprimir "El usuario es dorian" y por otro lado "El dominio es gmail.com".
+function getUserAndDomain(email) {
+  const atPosition = email.indexOf(`@`);
+}
+getUserAndDomain('elena@gmail.com');
